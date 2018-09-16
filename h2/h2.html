@@ -2,33 +2,57 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>简易音乐播放器</title>
 		<link rel="icon" href="../img/weixin.png" />
+		<title>表单</title>
 		<script>
-	function play(){
-		var audio = document.getElementById('audios');
-		var playbutton = document.getElementById('playaudio');
-		var pausebutton = document.getElementById('pauseaudio');
-		playbutton.disabled = true;
-		pausebutton.disabled = false;
-		audio.play();
-	}
-	function pause(){
-		var audio = document.getElementById('audios');
-		var playbutton = document.getElementById('playaudio');
-		var pausebutton = document.getElementById('pauseaudio');
-		pausebutton.disabled = true;
-		playbutton.disabled = false;
-		audio.pause();
-	}
-	</script>
+		</script>
 	</head>
 	<body>
-		<audio controls="controls" id="audios">
-	  	<source src="强军战歌.mp3" >
-		您的浏览器不支持Audio
-		</audio>
-		<input type='button' value="播放" id="playaudio"  onclick = "play()" />
-		<input type="button" value="暂停" id="pauseaudio" disabled="disabled"  onclick = "pause()" />
+		<h1>请填写个人信息</h1>
+		<fieldset>
+			<legend><font color="red">基本信息</font></legend>
+		<form action="#" method="get">
+			姓名<input type="text" name="xingming" min="2" max="4" placeholder="请输入姓名"/>
+			<span><font color="red">*</font></span>
+			<br/>
+			年龄<input type="text" name="nianling"/>
+		</form>
+		</fieldset>
+		<fieldset>
+			<legend><font color="red">你想在哪里收邮件</font></legend>
+			<form action="#" method="get">
+			邮箱<input type="search" name="youxiang" autocomplete="on" list="names" placeholder="请输入邮箱"/>
+			<span><font color="red">*</font></span>
+			<datalist id="names">
+				<option>123@qq.com</option>
+				<option>123@163.com</option>
+				<option>123@gmail.com</option>
+				<option>123@yahoo.com.cn</option>
+				<option>123@126.com</option>
+			</datalist>
+			</form>
+		</fieldset>
+		<fieldset>
+			<legend><font color="red">收入情况</font></legend>
+			<form action="#" method="get">
+			月收入<select name="shouru">
+				<option value="one" selected="selected">20k+</option>
+				<option value="two">30k+</option>
+				<option value="three">40k+</option>
+			</select><br/>
+			银行卡<input type="txt" name="kahao"/>
+			有效期<input type="date" name="riqi"/>
+			</form>
+		</fieldset>
+		</form>
+		<fieldset>
+			<legend><font color="red">选取提交文件</font></legend>
+			<form action="#" method="get">
+				文件<input type="file" name="wenjian"/>
+			</form>
+		</fieldset>
+		<form action="#" method="get">
+		<input type="submit"/>
+		</form>
 	</body>
 </html>
