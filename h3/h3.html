@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>页面换肤</title>
+		<style type="text/css">
+			#gra{background-color: gray;border:none;height:20px;width:20px;}
+			#pur{background-color: mediumpurple;border:none;height:20px;width:20px;}
+			#re{background-color: red;border:none;height:20px;width:20px;}
+			#bl{background-color: deepskyblue;border:none;height:20px;width:20px;}
+			#or{background-color: orangered;border:none;height:20px;width:20px;}
+			#gr{background-color:greenyellow;border:none;height:20px;width:20px;}
+			
+		</style>
+		<script>
+			var change=document.getElementById("wenzi");
+			var big=document.getElementById("but");
+			var gray=document.getElementById("gra");
+			var purple=document.getElementById("pur");
+			var red=document.getElementById("re");
+			var blue=document.getElementById("bl");
+			var orange=document.getElementById("or");
+			var green=document.getElementById("gr");
+			function change1(){
+				change.style.background="rgb(192,192,192)";
+				big.style.margintop="0px";
+				gray.style.margintop="5px";
+				localStorage['gray']="rgb(192,192,192)";
+			}
+			function change2(){
+				change.style.background="rgb(255,0,0)";
+				big.style.margintop="0px";
+				purple.style.margintop="5px";
+				localStorage['gray']="rgb(250,0,0)";
+			}
+			function change3(){
+				change.style.background="rgb(0,255,255)";
+				big.style.margintop="0px";
+				red.style.margintop="5px";
+				localStorage['gray']="rgb(0,255,255)";
+			}
+			function change4(){
+				change.style.background="rgb(0,250,0)";
+				big.style.margintop="0px";
+				blue.style.margintop="5px";
+				localStorage['gray']="rgb(0,250,0)";
+			}
+			function change5(){
+				change.style.background="rgb(255,0,255)";
+				big.style.margintop="0px";
+				orange.style.margintop="5px";
+				localStorage['gray']="rgb(255,0,255)";
+			}
+			function change6(){
+				change.style.background="rgb(192,192,192)";
+				big.style.margintop="0px";
+				green.style.margintop="5px";
+				localStorage['gray']="rgb(192,192,192)";
+			}
+			window.onload=function(){
+				if(window.localStorage.getItem("gray")){
+					change.style.background=localStorage.getItem("gray")
+				}
+				else{
+					change.style.background="none"
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<fieldset>
+			<legend><font color="red"><h1>页面换肤</h1></font></legend>
+			<div class="but">
+			<fieldset>
+				<input type="button" id="gra" onclick()="change1()"/>
+				<input type="button" id="pur" onclick()="change2()"/>
+				<input type="button" id="re" onclick()="change3()"/>
+				<input type="button" id="bl" onclick()="change4()"/>
+				<input type="button" id="or" onclick()="change5()"/>
+				<input type="button" id="gr" onclick()="change6()"/>
+			</fieldset>
+			</div>
+			<div id="wenzi">
+			<p>
+				localStorage将数据保存在客户端本地的硬件设备中，即使浏览器关闭了，
+			该数据依然存在，下次打开浏览器访问网站时仍然可以使用。
+			</p>
+			</div>
+		</fieldset>
+	</body>
+</html>
