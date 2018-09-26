@@ -3,8 +3,21 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
+		<script>
+			function show(){
+				var file;
+				file=document.getElementById("file").files[0];
+				var length=document.getElementById("size");
+				size.innerHTML=file.size;
+				var type=document.getElementById("type");
+				type.innerHTML=file.type;
+			}
+		</script>
 	</head>
 	<body>
-		<p>在下雨</p>
+		<input type="file" multiple size="80" id="file"/>
+		<input type="button" onclick="show();" value="显示文件信息"/><br/>
+		<span id="size">文件字节长度</span><br/>
+		<span id="type">文件类型</span>
 	</body>
 </html>
