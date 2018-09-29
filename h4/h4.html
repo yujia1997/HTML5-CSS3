@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>上传头像</title>
+		<style>
+			div{
+				width:200px;
+				height:200px;
+				border:2px solid gray;
+			}
+			#box{ 
+			   width: 300px; 
+			   height: 300px; 
+			   border:1px solid gray; 
+			   font-size: 40px; 
+			   text-align: center; 
+			   background-repeat: no-repeat; 
+			   background-size: 100%; 
+			 } 
+		</style>
+		<script type="text/javascript"> 
+		  var box; 
+		  window.onload=function(){ 
+		   box = document.getElementById("box");
+		   box.ondragenter = ignoreDrag; 
+		   box.ondragover = ignoreDrag; 
+		   box.ondrop = drop; 
+		  } 
+		  function ignoreDrag(e){ 
+		   e.stopPropagation(); 
+		   e.preventDefault(); 
+		  } 
+		  function drop(e){ 
+		   e.stopPropagation(); 
+		   e.preventDefault(); 
+		   var data = e.dataTransfer; 
+		   var files = data.files; 
+		     
+		   var file = files[0]; 
+		   var reader = new FileReader(); 
+		   reader.onload=function(e){ 
+		    box.style.backgroundImage = "url('"+e.target.result+"')"; 
+		   } 
+		   reader.readAsDataURL(file); 
+		  } 
+		 </script>
+	</head>
+	<body>
+		<h2>上传头像</h2>
+		<div id="box">  
+ 		</div> 
+	</body>
+</html>
