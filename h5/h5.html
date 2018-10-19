@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>钟表</title>
+		<style>
+			canvas{
+				border:1px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="400" height="400"></canvas>
+		<script>
+			var canvas=document.getElementById("canvas");
+			var context=canvas.getContext("2d");
+			
+			function drawClock(){
+				context.clearRect(0,0,400,400);
+				var now=new Date();
+				var sec=now.getSeconds();
+				var minute=now.getMinutes();
+				var hour=now.getHours();
+				hour=hour+minute/60;
+				hour=hour>12?hour-12:hour;
+				
+			context.beginPath();  
+			context.lineWidth = 8;  
+			context.strokeStyle="gray";  
+			context.arc(200,200,180,0,2*Math.PI,false); 
+			context.stroke();   
+			context.closePath(); 
+			//设置时针
+			for(var i=0; i<12; i++){
+				context.save();   //设置旋转环境
+				//设置时针的样式
+				context.lineWidth=5;
+				context.strokeStyle="red";
+				context.translate(200,200);//设置空间的原点
+				context.rotate(30*i*Math.PI/180);//设置旋转角度
+				context.beginPath();  
+				context.moveTo(0,-170); 
+				context.lineTo(0,-150);  
+				context.stroke();   //绘图
+				context.closePath();
+				context.restore();  //将旋转之后的元素放回原画布
+				}
+			//设置分针
+			for(var i=0; i<60;i++){
+				context.save();
+				context.lineWidth=3;
+				context.strokeStyle="red";
+				context.translate(200,200);
+				context.rotate(6*i*Math.PI/180);
+				context.beginPath();
+				context.moveTo(0,-170);
+				context.lineTo(0,-160);
+				context.stroke();
+				context.closePath();
+				context.restore();    
+				}
+			//钟表上的数字
+			 var deg=2*Math.PI/12;
+			 context.save();
+			 context.beginPath();
+			 context.translate(200,200);
+			 for(var i=1;i<13;i++){
+			 	var x1=Math.sin(i*deg);
+			 	var y1=-Math.cos(i*deg);
+			 	context.fillStyle="black";
+			 	context.font="normal 20px calibri";
+			 	context.textAlign="center";
+			 	context.textBaseline="middle";
+			 	context.fillText(i,x1*140,y1*140);
+			 }
+			 context.closePath();
+			 context.restore();
+			 //时针
+			context.save();  //设置旋转环境
+			context.lineWidth = 8;
+			context.strokeStyle="deepskyblue";
+			context.translate(200,200); //设置空间原点
+			context.rotate(hour*30*Math.PI/180);  //设置旋转角度
+			context.beginPath();   //画笔开始
+			context.moveTo(0,-95); 
+			context.lineTo(0,5);   
+			context.stroke();   //绘图
+			context.closePath();   //结束画布
+			context.restore(); 
+			//分针
+			context.save();  //设置旋转环境
+			context.lineWidth = 5;
+			context.strokeStyle="greenyellow";
+			context.translate(200,200); //设置空间原点
+			context.rotate(minute*Math.PI/180);  //设置旋转角度
+			context.beginPath();   //画笔开始
+			context.moveTo(0,-110);  
+			context.lineTo(0,5);   
+			context.stroke();   //绘图
+			context.closePath();   //结束画布
+			context.restore(); 
+			//秒针
+			context.save();  //设置旋转环境
+			context.lineWidth = 3;
+			context.strokeStyle="deeppink";
+			context.translate(200,200); //设置空间原点
+			context.rotate(sec*6*Math.PI/180);  //设置旋转角度
+			context.beginPath();   //画笔开始
+			context.moveTo(0,-130); 
+			context.lineTo(0,5); 
+			context.stroke();   //绘图
+			context.closePath();   //结束画布
+			context.restore(); 
+			//秒针上圆点
+			context.beginPath();
+			context.arc(200,200,4,0,2*Math.PI,false);
+			context.strokeStyle="black";
+			context.stroke();
+			
+		}
+		drawClock();
+		setInterval(drawClock,1000);
+		</script>
+	</body>
+</html>
