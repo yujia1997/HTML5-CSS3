@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Bootstrap响应式网页</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<script src="js/jquery.js"></script>    
+    	<script src="js/bootstrap.min.js"></script> 
+    	<style>
+    		#generic{
+    			margin-left: 100px;
+    		}
+    		.one{
+    			float:left;
+    			padding: 8px;
+    		}
+    	</style>
+	</head>
+	<body>
+		<ul class="nav nav-tabs">
+  			<li role="presentation" class="active"><a href="#">首页 </a></li>
+  			<li role="presentation"><a href="#">学校概况</a></li>
+  			<li role="presentation"><a href="#">机构设置</a></li>
+  			<li role="presentation"><a href="#">人才培养</a></li>
+  			<li role="presentation"><a href="#">科学研究</a></li>
+  			<li role="presentation"><a href="#">招生就业</a></li>
+  			<li role="presentation"><a href="#">人才招聘</a></li>
+  			<li role="presentation"><a href="#">公共服务</a></li>
+  			<li role="presentation"><a href="#">校友会</a></li>
+		</ul>
+		<div id="generic" class="carousel slide" data-ride="carousel">
+  	<!-- 轮播（Carousel）指示标 -->
+    		<ol class="carousel-indicators">
+      			<li data-target="#generic" data-slide-to="0" class="active"></li>
+      			<li data-target="#generic" data-slide-to="1"></li>
+      			<li data-target="#generic" data-slide-to="2"></li>
+      			<li data-target="#generic" data-slide-to="3"></li>
+    		</ol>
+     <!-- 轮播（Carousel）项目 -->
+    		<div class="carousel-inner" >
+      			<div class="item active">
+        			<img alt="First slide" src="img/0.gif" >
+      			</div>
+      			<div class="item">
+        			<img alt="Second slide" src="img/1.jpg" >
+       			</div>
+      			<div class="item">
+        			<img alt="Third slide" src="img/2.jpg" >
+        		</div>
+        		<div class="item">
+        			<img alt="Forth slide" src="img/3.jpg" >
+        		</div>
+      		</div>
+    <!-- 轮播（Carousel）导航 -->
+	    <a class="left carousel-control" href="#generic" data-slide="prev">
+	      <span class="glyphicon glyphicon-chevron-left"></span>
+	    </a>
+	    <a class="right carousel-control" href="#generic" data-slide="next">
+	      <span class="glyphicon glyphicon-chevron-right"></span>
+	    </a>
+  		</div>
+  		<div class="container">
+  			<div class="row">
+			  <div class="col-xs-4">
+			  	<p>
+			  		河北师范大学（Hebei Normal University）位于河北省会石家庄市，由中华人民共和国教育部与河北省人民政府共建，是一所具有百年历史和光荣传统的省属重点大学，河北省重点支持的国家一流大学建设一层次高校，是中国较早成立、规模较大的高等师范院校之一，入选卓越教师培养计划、中西部高校基础能力建设工程、全国深化创新创业教育改革示范高校、教育部来华留学示范基地建设高校。
+			  	</p>
+			  </div>
+			  <div class="col-xs-4">
+			  	<p>
+			  		河北师大最早起源于1902年创建于北京的顺天府学堂和1906年创建于天津的北洋女师范学堂。1996年6月，原河北师范大学、河北师范学院与创建于1952年的河北教育学院、创建于1984年的河北职业技术师范学院合并，组建成新的河北师范大学。2011年9月，原各校区迁至现址实现集中办学。2014年11月，河北省人民政府、教育部决定共建河北师范大学。
+			  	</p>
+			  </div>
+			  <div class="col-xs-4">
+			  	<p>
+			  		截至2018年3月，河北师范大学新校区占地1829亩，馆藏图书303万册，中外文数据库67个；设21个专业学院，1个独立学院（汇华学院），有博士学位授权一级学科8个，博士专业学位授权点1个，博士学位授权二级学科51个，硕士学位授权一级学科26个，硕士学位授权二级学科141个，硕士专业学位授权类别11种，博士后科研流动站9个，本科专业95个；有在职教职工2634人，在校本科生23101人，研究生4638人，成人教育学生8418人。
+			  	</p>
+			  </div>
+			</div>
+			<div class="table-responsive">
+				<table class="table  table-hover table-condensed table-striped">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>first</th>
+							<th>second</th>
+							<th>third</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>first</td>
+							<td>first</td>
+							<td>first</td>
+						</tr>
+						<tr>
+			        		<td>2</td>
+			        		<td>second</td>
+			        		<td>second</td>
+			        		<td>second</td>
+			      		</tr>
+			      		<tr>
+			        		<td>3</td>
+			        		<td>third</td>
+			        		<td>third</td>
+			        		<td>third</td>
+			      		</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="row">
+				<div class="col-xs-6">
+					<a href="#" class="thumbnail">
+		        		<img src="img/pic.jpg" alt="...">
+		      		</a>
+				</div>
+				<div class="col-xs-6">
+					<div class="media">
+					  <div class="media-left">
+					    <a href="#">
+					      <img class="media-object" src="img/5.jpg" alt="...">
+					    </a>
+					  </div>
+					  <div class="media-body">
+					    <h4 class="media-heading">学科建设</h4>
+					    <p>
+					    	截至2018年3月，学校有博士学位授权一级学科11个， [4]  博士专业学位授权点1个，博士学位授权二级学科51个；硕士学位授权一级学科29个， [4]  硕士学位授权二级学科141个，硕士专业学位授权类别11种；有国家重点学科1个，博士后科研流动站9个，河北省“双一流”建设学科7个、河北省高校国家重点学科培育项目1个、河北省高校强势特色学科4个、河北省高校重点学科14个，校级重点学科18个。
+					    </p>
+					  </div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-8">
+					<h3>图片展示</h3>
+					<div class="one"><img src="img/6.jpg"/></div>
+					<div class="one"><img src="img/7.jpg"/></div>
+					<div class="one"><img src="img/8.jpg"/></div>
+				</div>
+				<div class="col-xs-4">
+					<h3>登录</h3>
+						<div class="input-group">
+						  <span class="input-group-addon" id="basic-addon1">账号</span>
+						  <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+						</div>
+						<div class="input-group">
+						  <span class="input-group-addon" id="basic-addon1">密码</span>
+						  <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+						</div>
+					<ul class="nav nav-pills">
+					  <li role="presentation" class="active"><a href="#">登录</a></li>
+					</ul>
+			</div>
+  		</div>
+	</body>
+</html>
